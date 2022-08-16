@@ -1,0 +1,48 @@
+
+#include <bits/stdc++.h>
+#include <iostream>
+using namespace std;
+ 
+int binarySearch(vector<int> v, int To_Find)
+{
+    int lo = 0, hi = v.size() - 1;
+    int mid;
+   
+    while (hi-lo>1) {
+        int mid=lo+(hi-lo)/2;
+        cout<<"MID="<<mid<<'\n';
+        if (v[mid] < To_Find) {
+            lo = mid+1;
+            cout<<"LO="<<lo<<'\n';
+        }
+        else {
+            hi = mid;
+            cout<<"HI="<<hi<<'\n';
+        }
+    
+    if (v[lo] == To_Find) {
+       
+             return lo;
+    }
+    else if (v[hi] == To_Find) {
+       
+             return hi;
+    }
+    
+    }
+    return -1;
+}
+ 
+int main()
+{
+    vector<int> v = { 2,6,9,13,15};
+    int To_Find =13;
+    int x=binarySearch(v, To_Find);
+    if(x==-1){
+        cout<<"not found"<<'\n';
+    }else{
+          cout<<v[x]<<'\n';
+    }
+   
+    return 0;
+}
