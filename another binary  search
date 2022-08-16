@@ -1,0 +1,53 @@
+#include <bits/stdc++.h>
+#include <iostream>
+using namespace std;
+ 
+int binarySearch(vector<int> v, int To_Find)
+{
+    int lo = 0, hi = v.size() - 1;
+    int mid;
+   
+    while (hi-lo>1) {
+        int mid=lo+(hi-lo)/2;
+        cout<<"MID="<<mid<<'\n';
+        if (v[mid] > To_Find) {
+            hi = mid-1;
+            cout<<"HI="<<hi<<'\n';
+        }
+        else {
+            lo = mid;
+            cout<<"LO="<<lo<<'\n';
+        }
+    
+    if (v[lo] == To_Find) {
+        //cout << "Found"
+            // << " At Index " << lo << endl;
+             return lo;
+    }
+    else if (v[hi] == To_Find) {
+       // cout << "Found"
+             //<< " At Index " << hi << endl;
+             return hi;
+    }//else if (v[mid] == To_Find) {
+       // cout << "Found"
+         //    << " At Index " << mid << endl;
+           //  return 0;
+    //}
+    
+    }
+    return -1;
+}
+ 
+int main()
+{
+    vector<int> v = { 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15};
+    int To_Find =15;
+    int x=binarySearch(v, To_Find);
+    if(x==-1){
+        cout<<"not found"<<'\n';
+    }else{
+          cout<<v[x]<<'\n';
+    }
+   
+    return 0;
+}
