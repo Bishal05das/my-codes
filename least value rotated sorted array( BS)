@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int rotated_array(int arr[],int n){
+int l=0,r=n-1;
+while(l<=r){
+    int m=l+(r-l)/2;
+    //cout<<m<<'\n';
+    if(arr[m]<arr[m-1]) return arr[m];
+    if(arr[m]>arr[0]){
+        l=m+1;
+       
+    }else{
+        r=m-1;
+        
+    }
+    
+}
+}
+int main()
+{
+int arr[7]={10,12,15,4,6,8,9};
+int n=7;
+cout<<rotated_array(arr,7);
+
+
+
+
+}
