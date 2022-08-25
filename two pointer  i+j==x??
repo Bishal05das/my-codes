@@ -1,3 +1,5 @@
+// Given a sorted array A, having N integers. You need to find any pair(i,j) having sum as given number X.
+
 #include<bits/stdc++.h>
 using namespace std;
 
